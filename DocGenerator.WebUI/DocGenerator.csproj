@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DocGenerator.Client.Data\DocGenerator.Client.Data.csproj" />
+    <ProjectReference Include="..\DocGenerator.Client\DocGenerator.Client.csproj" />
+    <ProjectReference Include="..\DocGenerator.Games.Data\DocGenerator.Games.Data.csproj" />
+    <ProjectReference Include="..\DocGenerator.Games\DocGenerator.Games.csproj" />
+  </ItemGroup>
+
+</Project>

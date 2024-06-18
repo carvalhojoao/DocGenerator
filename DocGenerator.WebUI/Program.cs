@@ -1,7 +1,17 @@
+using DocGenerator.Client;
+using DocGenerator.Client.Data;
+using DocGenerator.Games;
+using DocGenerator.Games.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IGamesRepository, GamesRepository>();
+builder.Services.AddScoped<BlClient>();
+builder.Services.AddScoped<BlGames>();
 
 var app = builder.Build();
 
