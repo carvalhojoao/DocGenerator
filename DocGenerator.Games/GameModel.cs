@@ -11,5 +11,6 @@
         public string Name { get; set; }
         public string Type { get; set; }
         public decimal Size { get; set; }
+        public decimal Price { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿@model DocGenerator.Client.ClientModel
-@{
+﻿@{
     ViewData["Title"] = "Doc Generator";
 }
 
@@ -13,13 +12,21 @@
                         <h3 class="card-title">Doc Generator</h3>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <form action="" method="post">
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <textarea name="textarea" id="txtDoc"></textarea>
-                                    <button id="btnSubmit" type="button" class="btn btn-success">Submit</button>
-                                </form>
+                                </div>
                             </div>
+                            <div class="row">
+                                <div class="offset-lg-10 col-lg-1">
+                                    <button id="btnPrint" type="button" class="btn btn-success btn-lg">Print</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="printDoc">
+
                         </div>
                     </div>
                 </div>

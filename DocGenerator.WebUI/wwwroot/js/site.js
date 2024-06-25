@@ -26,8 +26,12 @@
 
     initializeDocExample();
 });
-$('#btnSubmit').click(function () {
-    console.log(tinymce.get('txtDoc').getContent());
+
+$('#btnPrint').click(function () {
+    let text = tinymce.get('txtDoc').getContent();
+    $.post('/Home/PrintDocument', { text }, function (data) {
+        $('#printDoc').html(data);
+    });
 });
 
 
@@ -35,23 +39,15 @@ $('#btnSubmit').click(function () {
 
 function initializeDocExample() {
     //preencher com propriedades do modelo
-    let sla = `<h1 style="text-align: center;">Invoice</h1>
+    let sla = `<h1 style="text-align: center;">Invoice&nbsp;</h1>
+<p style="text-align: left;">DocGenerator, Inc.</p>
+<p style="text-align: left;">12345 Sunny Road</p>
+<p style="text-align: left;">Sunnyville, TX 3245</p>
+<p style="text-align: left;">&nbsp;</p>
+<p style="text-align: left;">{ClientName} {ClientDocument}</p>
+<p style="text-align: left;">{ClientAdress}</p>
 <p>&nbsp;</p>
-<p>Products:</p>
-<table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"><col style="width: 11.093%;"></colgroup>
-<tbody>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>`;
+<p>Items:</p>
+<p>{ItemsList}</p>`;
     tinymce.get('txtDoc').setContent(sla);
 }

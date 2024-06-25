@@ -1,0 +1,17 @@
+﻿@model string
+<div class="box">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title">Doc Generator</h3>
+                    </div>
+                    <div id="txtDoc" class="card-body">
+                        @Html.Raw(Model)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
